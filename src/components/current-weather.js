@@ -50,7 +50,7 @@ const CurrentWeather = ({ data }) => {
                 </div>
                 <div className="w-full sm:w-1/2">
                   <div className="flex mb-2 justify-between items-center">
-                    <span>Humity</span>
+                    <span>Humidity</span>
                     {data.main ? (
                       <h3>{data.main.humidity.toFixed()}%&nbsp;</h3>
                     ) : null}
