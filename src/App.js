@@ -65,7 +65,12 @@ function App() {
     fetchLocation();
   }, [latitude, longitude]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className="h-screen flex justify-center items-center">
+        Loading...
+      </div>
+    );
 
   return (
     <div className="App">
