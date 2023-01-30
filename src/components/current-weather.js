@@ -67,7 +67,9 @@ const CurrentWeather = ({ data }) => {
                 <div className="w-full sm:w-1/2">
                   <div className="flex mb-2 justify-between items-center">
                     <span>Visibility</span>
-                    {data.main ? <h3>{data.visibility.toFixed()}m</h3> : null}
+                    {data.main ? (
+                      <h3>{data.visibility.toFixed() / 1000}km</h3>
+                    ) : null}
                   </div>
                 </div>
               </div>
