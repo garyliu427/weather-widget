@@ -5,8 +5,8 @@ const Forecast = ({ data }) => {
     <>
       <div></div>
       <div className="justify-center text-center text-3xl">Forecast</div>
-      <div className="flex justify-center w-1/2 m-auto">
-        <div className="flex">
+      <div className="md:flex md:justify-center md:w-1/2 md:m-auto">
+        <div className="md:flex">
           {data.list.slice(0, 5).map((item, idx) => (
             <div key={idx}>
               <div>
@@ -24,7 +24,7 @@ const Forecast = ({ data }) => {
                       })}
                     </h1>
 
-                    <h1 className="font-bold text-2xl mb-0 pt-5">
+                    <h1 className="font-bold text-2xl mb-0 pt-5 ">
                       {item.main.temp.toFixed()}&deg;
                     </h1>
                     <label className="min-max">

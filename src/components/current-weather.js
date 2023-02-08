@@ -2,9 +2,9 @@ import React from "react";
 
 const CurrentWeather = ({ data }) => {
   return (
-    <div className="flex justify-center w-1/2 m-auto">
+    <div className="md:flex md:justify-center md:w-1/2 md:m-auto">
       <div className="w-full px-2">
-        <div className="relative min-w-0 break-words rounded-lg overflow-hidden shadow-sm mb-4 w-full bg-blue-300">
+        <div className="relative min-w-0 break-words rounded-lg overflow-hidden shadow-sm mb-4 md:w-full bg-blue-300">
           <div className="px-6 py-6 relative ">
             <div className="flex justify-between items-center">
               <div className="text-left">
