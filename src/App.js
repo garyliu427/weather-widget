@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import CurrentWeather from "./components/current-weather";
 import Forecast from "./components/forecast";
 import LineChart from "./components/lineChart";
-import axios from "axios";
+import SyncLoader from "react-spinners/SyncLoader";
 
 function App() {
   const [latitude, setLatitude] = useState("");
@@ -39,12 +40,12 @@ function App() {
           setCurrentWeather({ ...weatherResponse.data });
           setForecast({ ...forcastResponse.data });
           setWeatherData({
-            labels: forcastResponse.data.list.slice(0, 5).map((item) => {
-              return new Date(item.dt * 1000).toLocaleString("en-AU", {
+            labels: forcastResponse.data.list.slice(0, 5).map((item) =>
+              new Date(item.dt * 1000).toLocaleString("en-AU", {
                 dateStyle: "short",
                 timeStyle: "short",
-              });
-            }),
+              })
+            ),
             datasets: [
               {
                 data: forcastResponse.data.list
@@ -65,12 +66,13 @@ function App() {
     fetchLocation();
   }, [latitude, longitude]);
 
-  if (loading)
+  if (loading) {
     return (
       <div className="h-screen flex justify-center items-center">
-        Loading...
+        <SyncLoader color="#36d7b7" />
       </div>
     );
+  }
 
   return (
     <div className="App">
