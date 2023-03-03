@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CurrentWeather = ({ data }) => {
   return (
@@ -8,11 +8,11 @@ const CurrentWeather = ({ data }) => {
           <div className="px-6 py-6 relative ">
             <div className="flex justify-between items-center">
               <div className="text-left">
-                  <h5 className="mb-0 font-bold text-3xl py-5">{data.name}</h5>
-                    {data.weather ? (
-                      <h3 className="font-medium text-xl mb-0">
-                        {data.weather[0].main}
-                      </h3>
+                <h5 className="mb-0 font-bold text-3xl py-5">{data.name}</h5>
+                {data.weather ? (
+                  <h3 className="font-medium text-xl mb-0">
+                    {data.weather[0].main}
+                  </h3>
                 ) : null}
               </div>
 
@@ -33,8 +33,8 @@ const CurrentWeather = ({ data }) => {
               <div className="flex mb-2 w-full">
                 {data.main ? (
                   <h3>{data.main.temp_min.toFixed()}&deg;C&nbsp;</h3>
-                ) : null}{" "}
-                /{" "}
+                ) : null}{' '}
+                /{' '}
                 {data.main ? (
                   <h3>&nbsp;{data.main.temp_max.toFixed()}&deg;C</h3>
                 ) : null}

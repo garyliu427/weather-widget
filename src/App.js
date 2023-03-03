@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import CurrentWeather from "./components/current-weather";
-import Forecast from "./components/forecast";
-import LineChart from "./components/lineChart";
-import SyncLoader from "react-spinners/SyncLoader";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import CurrentWeather from './components/current-weather';
+import Forecast from './components/forecast';
+import LineChart from './components/lineChart';
+import SyncLoader from 'react-spinners/SyncLoader';
 
 function App() {
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [weatherData, setWeatherData] = useState({
@@ -24,11 +24,11 @@ function App() {
 
     const fetchLocation = async () => {
       const currentWeatherFetch = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`,
       );
       // console.log(currentWeatherFetch.data);
       const forecastFetch = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`,
       );
 
       // console.log(forecastFetch.data);
@@ -41,19 +41,19 @@ function App() {
           setForecast({ ...forcastResponse.data });
           setWeatherData({
             labels: forcastResponse.data.list.slice(0, 5).map((item) =>
-              new Date(item.dt * 1000).toLocaleString("en-AU", {
-                dateStyle: "short",
-                timeStyle: "short",
-              })
+              new Date(item.dt * 1000).toLocaleString('en-AU', {
+                dateStyle: 'short',
+                timeStyle: 'short',
+              }),
             ),
             datasets: [
               {
                 data: forcastResponse.data.list
                   .slice(0, 5)
                   .map((item) => item.main.temp),
-                label: "Temperature",
-                backgroundColor: "rgba(255, 99, 132, 0.2)",
-                borderColor: "rgba(255, 99, 132, 1)",
+                label: 'Temperature',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1,
               },
             ],
