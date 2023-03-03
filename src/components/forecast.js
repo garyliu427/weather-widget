@@ -24,7 +24,7 @@ const Forecast = ({ data }) => {
                       })}
                     </h1>
 
-                    <h1 className="font-bold text-2xl mb-0 pt-5 ">
+                          <h1 className="font-bold text-2xl mb-0 pt-5 ">
                       {item.main.temp.toFixed()}&deg;
                     </h1>
                     <label className="min-max">
