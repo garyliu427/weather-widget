@@ -17,12 +17,12 @@ const Forecast = ({ data }) => {
                       className="icon-small"
                       alt="weather"
                     />
-                    <h1 className="text-xl mb-0 pt-5 pr-5">
-                      {new Date(item.dt * 1000).toLocaleString("en-AU", {
-                        dateStyle: "short",
-                        timeStyle: "short",
-                      })}
-                    </h1>
+                        <h1 className="text-xl mb-0 pt-5 pr-5">
+                          {new Date(item.dt * 1000).toLocaleString("en-AU", {
+                            dateStyle: "short",
+                            timeStyle: "short",
+                          })}
+                        </h1>
 
                           <h1 className="font-bold text-2xl mb-0 pt-5 ">
                       {item.main.temp.toFixed()}&deg;

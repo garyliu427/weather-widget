@@ -5,7 +5,7 @@ import { Chart } from "chart.js/auto";
 function LineChart({ chartData }) {
   return (
     <div className="flex justify-center w-1/2 m-auto">
-          <Line data={chartData}></Line>
+      <Line data={chartData}></Line>
     </div>
   );
 }

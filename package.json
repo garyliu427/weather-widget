@@ -23,7 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "config-husky": "npx husky install && npx husky add .husky/pre-commit"
   },
   "husky": {
     "hooks": {

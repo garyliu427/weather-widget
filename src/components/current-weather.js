@@ -8,11 +8,11 @@ const CurrentWeather = ({ data }) => {
           <div className="px-6 py-6 relative ">
             <div className="flex justify-between items-center">
               <div className="text-left">
-                <h5 className="mb-0 font-bold text-3xl py-5">{data.name}</h5>
-                {data.weather ? (
-                  <h3 className="font-medium text-xl mb-0">
-                    {data.weather[0].main}
-                  </h3>
+                  <h5 className="mb-0 font-bold text-3xl py-5">{data.name}</h5>
+                    {data.weather ? (
+                      <h3 className="font-medium text-xl mb-0">
+                        {data.weather[0].main}
+                      </h3>
                 ) : null}
               </div>
 
